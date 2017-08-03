@@ -47,6 +47,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &1208643653971612
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4493674558773134}
+  m_Layer: 0
+  m_Name: Fire Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1393663791540020
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,6 +94,7 @@ GameObject:
   - component: {fileID: 114504335262132592}
   - component: {fileID: 114942406078009542}
   - component: {fileID: 114614014716531454}
+  - component: {fileID: 114613729976472882}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -124,8 +140,22 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4493674558773134}
   m_Father: {fileID: 4395011834191042}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4493674558773134
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1208643653971612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4491792858933764}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4838371148735896
@@ -476,6 +506,19 @@ MonoBehaviour:
     i15: 247
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114613729976472882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1577032343286972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 258f9d492f79a55488eba90ecbe1f2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotCooldown: 0.3
+  firePosition: {fileID: 4493674558773134}
 --- !u!114 &114614014716531454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -512,6 +555,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 136337550474678774}
+        m_MethodName: set_enabled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114613729976472882}
         m_MethodName: set_enabled
         m_Mode: 0
         m_Arguments:
