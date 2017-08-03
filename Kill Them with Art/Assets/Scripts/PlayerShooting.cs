@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Networking;
 
 public class PlayerShooting : NetworkBehaviour {
@@ -32,7 +30,7 @@ public class PlayerShooting : NetworkBehaviour {
 
         ellapsedTime += Time.deltaTime;
 
-        if(Input.GetButtonDown("fire1") && ellapsedTime > shotCooldown)
+        if(Input.GetButtonDown("Fire1") && ellapsedTime > shotCooldown)
         {
             ellapsedTime = 0f;
             CmdFireShot(firePosition.position, firePosition.forward);
@@ -51,7 +49,14 @@ public class PlayerShooting : NetworkBehaviour {
 
         if(hitSomething)
         {
+            //try to get something's PlayerHealth component
+            PlayerHealth enemy = hit.transform.GetComponent<PlayerHealth>();
 
+            //if something does have the PlayerHealth component
+            if(enemy != null)
+            {
+                enemy.takeDamage();
+            }
         }
 
         RpcProcessShotEffects(hitSomething, hit.point);

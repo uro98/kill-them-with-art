@@ -49,4 +49,9 @@ public class Player : NetworkBehaviour {
             onToggleRemote.Invoke(false);
         }
     }
+
+    public void Die()
+    {
+        DisablePlayer();
+    }
 }
