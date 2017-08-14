@@ -1,3 +1,3 @@
-# kill-them-with-art
+# The Last Stroke
 
-An in-progress FPS game in Unity
+A multiplayer FPS game in Unity
